@@ -17,12 +17,22 @@
         <ul class="nav navbar-nav navbar-right">
   				<li class="active"><a href="#">メニューＡ</a></li>
   				<li><a href="#">メニューＢ</a></li>
-  				<li class="active"><%= link_to 'Twiterを用いてログイン', '/auth/twitter' %></li>
+          <% if session[:user_id] %>
+  				  <li class="active"><%= link_to 'ログアウト', 'auth/twitter' %></li>
+          <% else %>
+            <li class="active"><%= link_to 'Twiterを用いてログイン', 'auth/twitter' %></li>
+          <% end %>
 			  </ul>
     </div>
   </header>
 
-  <div class="container-fluid">
+  <div class="container">
+    <% if flash[:notice] %>
+      <div class="alert alert-success">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
     <%= yield %>
   </div>
 </body>
