@@ -12,6 +12,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'therubyracer', platforms: :ruby
 gem 'better_errors', '~> 2.1.1'
+gem 'omniauth', '~> 1.2.0'
+gem 'omniauth-twitter', '~> 1.0.0'
 
 group :development do
   gem 'spring'
