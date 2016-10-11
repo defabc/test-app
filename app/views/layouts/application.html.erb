@@ -18,7 +18,7 @@
   				<li class="active"><a href="#">メニューＡ</a></li>
   				<li><a href="#">メニューＢ</a></li>
           <% if session[:user_id] %>
-  				  <li class="active"><%= link_to 'ログアウト', 'auth/twitter' %></li>
+  				  <li class="active"><%= link_to 'ログアウト', logout_path %></li>
           <% else %>
             <li class="active"><%= link_to 'Twiterを用いてログイン', 'auth/twitter' %></li>
           <% end %>
@@ -29,7 +29,7 @@
   <div class="container">
     <% if flash[:notice] %>
       <div class="alert alert-success">
-        <%= flash[:notice] %>
+        <%= notice %>
       </div>
     <% end %>
 
