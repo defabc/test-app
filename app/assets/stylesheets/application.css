@@ -11,5 +11,6 @@
  * file per style scope.
  *
  *= require_tree .
+ *= requiee bootstrap.min
  *= require_self
  */
