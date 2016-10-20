@@ -11,4 +11,5 @@ class User < ActiveRecord::Base
       user.image_url = image_url
     end
   end
+  
 end

@@ -17,7 +17,7 @@
         <ul class="nav navbar-nav navbar-right">
   				<li class="active"><a href="#">メニューＡ</a></li>
   				<li><a href="#">メニューＢ</a></li>
-          <% if session[:user_id] %>
+          <% if logged_in? %>
   				  <li class="active"><%= link_to 'ログアウト', logout_path %></li>
           <% else %>
             <li class="active"><%= link_to 'Twiterを用いてログイン', 'auth/twitter' %></li>
