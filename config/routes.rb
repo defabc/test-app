@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :events
+
   root 'wellcome#index'
   get 'auth/twitter/callback' => 'session#create'
   get 'logout' => 'session#destroy'
