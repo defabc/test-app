@@ -15,8 +15,7 @@
         </div>
 
         <ul class="nav navbar-nav navbar-right">
-  				<li class="active"><a href="#">メニューＡ</a></li>
-  				<li><a href="#">メニューＢ</a></li>
+  				<li><%= link_to 'イベントを作る', new_event_path %></li>
           <% if logged_in? %>
   				  <li class="active"><%= link_to 'ログアウト', logout_path %></li>
           <% else %>
@@ -30,6 +29,12 @@
     <% if flash[:notice] %>
       <div class="alert alert-success">
         <%= notice %>
+      </div>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <div class="alert alert-danger">
+        <%= alert %>
       </div>
     <% end %>
 
