@@ -14,8 +14,33 @@ class EventsController < ApplicationController
     end
   end
 
+  def show
+    @event = Event.find(params[:id])
+    current_user
+  end
+
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    if @event.update(event_params)
+      redirect_to root_path, notice: 'イベントの更新に成功しました'
+    else
+      render :edit
+    end
+
+  end
+
   def index
     render :new
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy!
+    redirect_to root_path, notice: 'イベントを削除しました'
   end
 
   private

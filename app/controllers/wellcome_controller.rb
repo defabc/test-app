@@ -1,5 +1,6 @@
 class WellcomeController < ApplicationController
   def index
+    @events = Event.all
   end
 
   def new
